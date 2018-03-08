@@ -1,1 +1,0 @@
-<div class="classTitleBar"> [field:typename/] </div>

@@ -1,1 +1,0 @@
-<a href="[field:typelink/]" class="aboutMore"> 了解我们更多&gt;&gt; </a>
