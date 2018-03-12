@@ -1,0 +1,2 @@
+INSERT INTO `dede_search_keywords` VALUES('1','产品','产品','6','8','1516074585','0','0');
+INSERT INTO `dede_search_keywords` VALUES('2','啊实打实','啊实打实 实打实','1','0','1516065931','0','0');

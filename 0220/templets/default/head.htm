@@ -1,0 +1,55 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-9"> <a href="/"> <img src="/skin/images/logo.png" class="logo" alt="{dede:global.cfg_webname/}"/></a> </div>
+      <div id="topsearch" class="col-xs-12 col-sm-3 col-md-3">
+        <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+          <input type="hidden" name="q" value="0"/>
+          <div class="input-group search_group">
+            <input type="text" name="q" class="form-control input-sm" placeholder="产品搜索" />
+            <span class="input-group-btn">
+            <button style="border:none;"type="submit" id="submit_search" class="glyphicon glyphicon-search btn-lg"></button>
+            </span> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container"> 
+    <!-- Fixed navbar -->
+    <nav id="top_nav" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <span id="small_search" class="glyphicon glyphicon-search" aria-hidden="true"></span> <span class="navbar-brand">导航菜单</span></div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/" class="active">网站首页</a></li>
+            {dede:channelartlist typeid='top'}
+            <li class="dropdown"> <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a> <a href="#" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {dede:field name=typeid runphp="yes"}
+              global $dsql;
+              $sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+              $row = $dsql->GetOne($sql);      
+              @me=is_array($row)?'<span class="glyphicon glyphicon-menu-down btn-xs"></span>':'';
+              {/dede:field}</a>
+              <ul role="menu" {dede:field name=typeid runphp="yes"}
+global $dsql;
+$sql = "SELECT id From `#@__arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+$row = $dsql->
+                GetOne($sql);
+                @me=is_array($row)?'class="dropdown-menu nav_small"':'style="display:none"';
+                {/dede:field}
+                >  
+                
+                
+                {dede:channel type='son' noself='yes'}
+                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                {/dede:channel}
+              </ul>
+            </li>
+            {/dede:channelartlist}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

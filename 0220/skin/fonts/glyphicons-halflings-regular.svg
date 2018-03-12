@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="applicable-device" content="pc,mobile" />
+<title>魔方动力 - 响应式企业网站、商城、OA系统供应商【官网】</title>
+<meta name="title" content="魔方动力 - 响应式企业网站、商城、OA系统供应商【官网】" />
+<meta name="keywords" content="自助建站，智能建站，网站建设，网站制作，网站设计，网页设计，网站模板，网页模板，企业建站，自助建站，网店，微站，微网站，微店，微网店，手机建站，手机网站" />
+<meta name="description" content="MojoCube 魔方动力是开源的响应式网站系统、内容管理系统（McCMS）、购物车系统（McCart）、办公管理系统（McOffice）、手机内容管理系统提供商，网站建设，网站开发，定制网站，模板设计" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/glide.css" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/detailGlide.css" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/lightgallery.css" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/style.css" />
+<link type="text/css" rel="stylesheet" href="/Themes/Default/online.css" />
+<script language="javascript" src="JS/jquery.min.js" type="text/javascript"></script>
+<script language="javascript" src="JS/bootstrap.js" type="text/javascript"></script>
+<script language="javascript" src="JS/jquery.glide.js" type="text/javascript"></script>
+</head>
+
+<body>
+    
+    <!--[if lt IE 9]>
+        <script src="JS/html5shiv.min.js" type="text/javascript"></script>
+        <script src="JS/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+    
+    <!-- 顶部信息 -->
+    
+  
+
+
+
+    <header>
+    
+        <!-- 导航菜单 -->
+        <div id="WUC_Menu_Nav"><nav class="navbar navbar-fixed-top navbar-default"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" onclick="toggleMenu()"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><span id="language" style="display:block"></span><span id="small_search" class="glyphicon glyphicon-search" aria-hidden="true"></span><a class="navbar-brand" href="default.aspx"><img src="Files/Site/Logo/2016052422092379682290.png" alt="魔方动力" /></a></div><div id="navbar" class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href="default.aspx" >网站首页</a></li><li class="dropdown"><a href="product.aspx" >产品中心</a><a href="product.aspx"  id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a><ul class="dropdown-menu nav_small" role="menu"><li class="dropdown_item"><a href="product_category-cms.aspx" >内容管理系统</a></li><li class="dropdown_item"><a href="product_category-cart.aspx" >购物车系统</a></li><li class="dropdown_item"><a href="http://oa.mojocube.com/" target="_blank" >办公管理系统</a></li></ul></li><li><a href="http://www.mojocube.com/doc/default.aspx" target="_blank" >开发文档</a></li><li><a href="https://520mc.taobao.com/" target="_blank" >增值服务</a></li><li><a href="album.aspx" >案例展示</a></li><li><a href="article.aspx" >资讯中心</a></li><li><a href="comment.aspx" >在线咨询</a></li><li class="dropdown"><a href="about.aspx" >关于我们</a><a href="about.aspx"  id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a><ul class="dropdown-menu nav_small" role="menu"><li class="dropdown_item"><a href="about.aspx" >公司介绍</a></li><li class="dropdown_item"><a href="contact.aspx" >联系我们</a></li></ul></li></ul></div></div></nav></div>
+
+
+        <div class="topPadding"></div>
+        
+        <!-- 搜索框 -->
+        
+
+<script type="text/javascript">
+
+    function Search_Submit() {
+        if (document.getElementById('txtSearch').value != '') {
+            var searchType = '0';
+            if (searchType == 0) {
+                window.location.href = '/product.aspx?q=' + encodeURI(document.getElementById('txtSearch').value) + '&type=0';
+            }
+            else {
+                window.location.href = '/article.aspx?q=' + encodeURI(document.getElementById('txtSearch').value) + '&type=1';
+            }
+        }
+        else {
+            alert('请输入关键字');
+        }
+    }
+
+</script>
+  
+<div id="smallSearchBox">
+    <div class="col-xs-0 col-sm-9 col-md-9">
+    </div>
+    <div id="topsearch" class="col-xs-12 col-sm-3 col-md-3 pad">
+        <div class="input-group search_group">
+            <input type="text" id="txtSearch" name="queryTxt" class="form-control input-sm" placeholder="请输入关键字" />
+            <span class="input-group-btn"><a href="javascript:Search_Submit();" class="btn btn-sm mysearch_btn" type="button">搜 索</a> </span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#small_search").click(function () { $("#languageBox").hide(); $("#smallSearchBox").slideToggle(300); });
+    $("#language").click(function () { window.location.href = 'https://520mc.taobao.com/' });
+</script>
+
+
+
+
+    </header>
+    
+    <div id="BannerTop">
+
+        <video id="video-container" autoplay="" loop="" poster="images/home_bg.jpg">
+            <source src="images/home_bg.mp4" type="video/mp4">
+            <source src="images/home_bg.webm" type="video/webm">
+            <source src="images/home_bg.ogv" type="video/ogv">
+        </video>
+
+        <div id="text-container">
+            <div id="text1">自主开发响应式企业网站、商城、OA</div>
+            <div id="text2">我们已经为成千上万的企业、商家搭建网站、OA系统</div>
+            <div style="height:10px;"></div>
+            <div id="text3"><a href="https://520mc.taobao.com/" target="_blank" style="color:#fff;">立即创建</a></div>
+        </div>
+
+        <div style="width:100%; height:50px; background:url(images/tmbg.png) center 0 no-repeat; margin-top:-50px; z-index:2; position:absolute; bottom:0px;"></div>
+
+    </div>
+
+    <!-- 内容 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                
+                <div style="text-align:center; padding:10px; margin-top:-20px;">
+                    <h1>为什么选择我们？</h1>
+                    <div id="AboutDiv" style="padding:10px 0;">我们有十多年的网站开发经验，拥有自主研发的内容管理系统、购物车系统、OA办公系统等。</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                <div class="indexProduct">
+
+                    <div class="titleBar">
+                        <div id="bottomProductTitle1">
+                            <h1>推荐产品</h1>
+                            <span>PRODUCTS</span>
+                        </div>
+                        <div id="bottomProductTitle2" style="display:none">
+                            <h1>最新产品</h1>
+                            <span>PRODUCTS</span>
+                        </div>
+                        <div class="bottomButtonBox">
+                            <a id="bottomProductBtn1" class="bottomButton selectedBottomButton">推荐</a>
+                            <a id="bottomProductBtn2" class="bottomButton">新品</a>
+                        </div>
+                    </div>
+
+                    <div id="bottomProductList1" class="productList"><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="衣服商城响应式网站模板" href='product-b001.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDEvMjAxNzA0MTMyMTIyMDg5NTMxMTM0Ni5wbmc=&w=500&h=500" alt="衣服商城响应式网站模板" /></a><a class="productTitle" href="product-b001.aspx" title="衣服商城响应式网站模板">衣服商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="投资公司响应式网站模板" href='product-a009.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDkvMjAxNzA0MjcyMTQwNTMxNDUxNDIxNC5wbmc=&w=500&h=500" alt="投资公司响应式网站模板" /></a><a class="productTitle" href="product-a009.aspx" title="投资公司响应式网站模板">投资公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="教育培训响应式网站模板" href='product-a013.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTMvMjAxNzA2MDkxMTMyMjEzMDc2OTIwNS5wbmc=&w=500&h=500" alt="教育培训响应式网站模板" /></a><a class="productTitle" href="product-a013.aspx" title="教育培训响应式网站模板">教育培训响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="珠宝商城响应式网站模板" href='product-b005.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDUvMjAxNzA0MTMyMTI1MDc1NjI1OTExMS5wbmc=&w=500&h=500" alt="珠宝商城响应式网站模板" /></a><a class="productTitle" href="product-b005.aspx" title="珠宝商城响应式网站模板">珠宝商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="化妆品商城响应式网站模板" href='product-b004.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDQvMjAxNzA0MTMyMTI0MjE1NDY4OTgwMi5wbmc=&w=500&h=500" alt="化妆品商城响应式网站模板" /></a><a class="productTitle" href="product-b004.aspx" title="化妆品商城响应式网站模板">化妆品商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="网络设备响应式网站模板" href='product-a014.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTQvMjAxNzA2MTUxNDQzMjMzNDY3MjI1NS5wbmc=&w=500&h=500" alt="网络设备响应式网站模板" /></a><a class="productTitle" href="product-a014.aspx" title="网络设备响应式网站模板">网络设备响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="食品商城响应式网站模板" href='product-b002.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDIvMjAxNzA0MTMyMTIzMTAwMDAwMTEyNy5wbmc=&w=500&h=500" alt="食品商城响应式网站模板" /></a><a class="productTitle" href="product-b002.aspx" title="食品商城响应式网站模板">食品商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="游戏公司响应式网站模板" href='product-a012.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTIvMjAxNzA2MDcxMDU3MzE5MDEzMzgwOS5wbmc=&w=500&h=500" alt="游戏公司响应式网站模板" /></a><a class="productTitle" href="product-a012.aspx" title="游戏公司响应式网站模板">游戏公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="机械工业响应式网站模板" href='product-a010.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTAvMjAxNzA1MDIyMjE2MTI1NjcwODExOS5wbmc=&w=500&h=500" alt="机械工业响应式网站模板" /></a><a class="productTitle" href="product-a010.aspx" title="机械工业响应式网站模板">机械工业响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="酒业集团响应式网站模板" href='product-a016.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTYvMjAxNzEwMDIxMzMzMjkwMTgyODc3MS5wbmc=&w=500&h=500" alt="酒业集团响应式网站模板" /></a><a class="productTitle" href="product-a016.aspx" title="酒业集团响应式网站模板">酒业集团响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="家纺商城响应式网站模板" href='product-b006.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDYvMjAxNzEwMDYwMDIzNDk2Mjc2NTU4MS5wbmc=&w=500&h=500" alt="家纺商城响应式网站模板" /></a><a class="productTitle" href="product-b006.aspx" title="家纺商城响应式网站模板">家纺商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="酒店响应式网站模板" href='product-a006.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDYvMjAxNzA0MTcyMDI3Mjk4MjgxODI3NS5wbmc=&w=500&h=500" alt="酒店响应式网站模板" /></a><a class="productTitle" href="product-a006.aspx" title="酒店响应式网站模板">酒店响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="广告设计响应式网站模板" href='product-a015.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTUvMjAxNzA2MTYxNTE3MTQxNDM2MTQxNS5wbmc=&w=500&h=500" alt="广告设计响应式网站模板" /></a><a class="productTitle" href="product-a015.aspx" title="广告设计响应式网站模板">广告设计响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="无人机公司响应式网站模板" href='product-a008.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDgvMjAxNzA0MjUyMTU1NDYzNDgyOTMwOC5wbmc=&w=500&h=500" alt="无人机公司响应式网站模板" /></a><a class="productTitle" href="product-a008.aspx" title="无人机公司响应式网站模板">无人机公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="眼镜公司响应式网站模板" href='product-a005.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDUvMjAxNzA0MTMyMTIxMjM0Mzc1Mzk1MC5wbmc=&w=500&h=500" alt="眼镜公司响应式网站模板" /></a><a class="productTitle" href="product-a005.aspx" title="眼镜公司响应式网站模板">眼镜公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="文具用品响应式网站模板" href='product-a018.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTgvMjAxNzEwMTExNDM1NDYyNTI2OTEzMC5wbmc=&w=500&h=500" alt="文具用品响应式网站模板" /></a><a class="productTitle" href="product-a018.aspx" title="文具用品响应式网站模板">文具用品响应式网站模板</a></div></div>
+
+                    <div id="bottomProductList2" class="productList" style="display:none"><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="文具用品响应式网站模板" href='product-a018.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTgvMjAxNzEwMTExNDM1NDYyNTI2OTEzMC5wbmc=&w=500&h=500" alt="文具用品响应式网站模板" /></a><a class="productTitle" href="product-a018.aspx" title="文具用品响应式网站模板">文具用品响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="体育用品响应式网站模板" href='product-a017.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTcvMjAxNzEwMDkxNDQzMzQ4OTMyMzQ2My5wbmc=&w=500&h=500" alt="体育用品响应式网站模板" /></a><a class="productTitle" href="product-a017.aspx" title="体育用品响应式网站模板">体育用品响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="家纺商城响应式网站模板" href='product-b006.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDYvMjAxNzEwMDYwMDIzNDk2Mjc2NTU4MS5wbmc=&w=500&h=500" alt="家纺商城响应式网站模板" /></a><a class="productTitle" href="product-b006.aspx" title="家纺商城响应式网站模板">家纺商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="酒业集团响应式网站模板" href='product-a016.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTYvMjAxNzEwMDIxMzMzMjkwMTgyODc3MS5wbmc=&w=500&h=500" alt="酒业集团响应式网站模板" /></a><a class="productTitle" href="product-a016.aspx" title="酒业集团响应式网站模板">酒业集团响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="广告设计响应式网站模板" href='product-a015.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTUvMjAxNzA2MTYxNTE3MTQxNDM2MTQxNS5wbmc=&w=500&h=500" alt="广告设计响应式网站模板" /></a><a class="productTitle" href="product-a015.aspx" title="广告设计响应式网站模板">广告设计响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="网络设备响应式网站模板" href='product-a014.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTQvMjAxNzA2MTUxNDQzMjMzNDY3MjI1NS5wbmc=&w=500&h=500" alt="网络设备响应式网站模板" /></a><a class="productTitle" href="product-a014.aspx" title="网络设备响应式网站模板">网络设备响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="教育培训响应式网站模板" href='product-a013.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTMvMjAxNzA2MDkxMTMyMjEzMDc2OTIwNS5wbmc=&w=500&h=500" alt="教育培训响应式网站模板" /></a><a class="productTitle" href="product-a013.aspx" title="教育培训响应式网站模板">教育培训响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="游戏公司响应式网站模板" href='product-a012.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTIvMjAxNzA2MDcxMDU3MzE5MDEzMzgwOS5wbmc=&w=500&h=500" alt="游戏公司响应式网站模板" /></a><a class="productTitle" href="product-a012.aspx" title="游戏公司响应式网站模板">游戏公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="医疗器械响应式网站模板" href='product-a011.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTEvMjAxNzA1MDUyMzI2Mzk2NjA3MjI2MC5wbmc=&w=500&h=500" alt="医疗器械响应式网站模板" /></a><a class="productTitle" href="product-a011.aspx" title="医疗器械响应式网站模板">医疗器械响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="机械工业响应式网站模板" href='product-a010.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMTAvMjAxNzA1MDIyMjE2MTI1NjcwODExOS5wbmc=&w=500&h=500" alt="机械工业响应式网站模板" /></a><a class="productTitle" href="product-a010.aspx" title="机械工业响应式网站模板">机械工业响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="投资公司响应式网站模板" href='product-a009.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDkvMjAxNzA0MjcyMTQwNTMxNDUxNDIxNC5wbmc=&w=500&h=500" alt="投资公司响应式网站模板" /></a><a class="productTitle" href="product-a009.aspx" title="投资公司响应式网站模板">投资公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="无人机公司响应式网站模板" href='product-a008.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDgvMjAxNzA0MjUyMTU1NDYzNDgyOTMwOC5wbmc=&w=500&h=500" alt="无人机公司响应式网站模板" /></a><a class="productTitle" href="product-a008.aspx" title="无人机公司响应式网站模板">无人机公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="自行车公司响应式网站模板" href='product-a007.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDcvMjAxNzA0MTkyMTA2NTk1MTU2MzM5Ny5wbmc=&w=500&h=500" alt="自行车公司响应式网站模板" /></a><a class="productTitle" href="product-a007.aspx" title="自行车公司响应式网站模板">自行车公司响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="酒店响应式网站模板" href='product-a006.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0EwMDYvMjAxNzA0MTcyMDI3Mjk4MjgxODI3NS5wbmc=&w=500&h=500" alt="酒店响应式网站模板" /></a><a class="productTitle" href="product-a006.aspx" title="酒店响应式网站模板">酒店响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="珠宝商城响应式网站模板" href='product-b005.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDUvMjAxNzA0MTMyMTI1MDc1NjI1OTExMS5wbmc=&w=500&h=500" alt="珠宝商城响应式网站模板" /></a><a class="productTitle" href="product-b005.aspx" title="珠宝商城响应式网站模板">珠宝商城响应式网站模板</a></div><div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"><a title="化妆品商城响应式网站模板" href='product-b004.aspx'><span class="imgLink-hover"><span class="hover-link"></span></span><img src="Files.aspx?image=XiRAJSMhKiZQcm9kdWN0L0IwMDQvMjAxNzA0MTMyMTI0MjE1NDY4OTgwMi5wbmc=&w=500&h=500" alt="化妆品商城响应式网站模板" /></a><a class="productTitle" href="product-b004.aspx" title="化妆品商城响应式网站模板">化妆品商城响应式网站模板</a></div></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                
+                <div style="text-align:center; padding:10px;">
+                    <h1>我们的产品</h1>
+                    <div id="ProductDiv" style="padding:10px 0;">响应式后台管理界面，海量精美的响应式网站模板，无需编程，立即使用。</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner homeBanner">
+        <div id="BannerBottom" class="slider"><ul class="slider__wrapper"><li class="slider__item"><a style="background-image:url(Files/Site/Banner/2017040915361793758245.jpg)"><img src="Images/banner-1.png" alt="魔方动力" /></a></li><li class="slider__item"><a style="background-image:url(Files/Site/Banner/2017040915364304684441.jpg)"><img src="Images/banner-1.png" alt="魔方动力" /></a></li></ul></div>
+    </div>
+    
+    <script type="text/javascript">
+        var glide = $('.slider').glide();
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="indexNavigationGroup" id="classification" style="margin-bottom:-10px;">
+                    <div class="titleBar">
+                        <h1>导航栏目</h1>
+                        <span>NAVIGATION</span>
+                    </div>
+                    <div class="navigationBox">
+                        <div class="list">
+                            <ul id="firstpane"><li><a href="product_category-cms.aspx">内容管理系统</a></li><li><a href="product_category-cart.aspx">购物车系统</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <div class="newsBox">
+                    <div class="titleBar">
+                        <h1>网站公告</h1>
+                        <span></span> 
+                        <a class="rightMore" href="article_category-notify.aspx">>></a>
+                    </div>
+                    <ul id="ArticleUL" class="indexNewsList"><li class="col-xs-12 col-sm-6 col-md-6"><a href="article-20160529211823.aspx"><div class="img" style="background-image: url(Images/default_image.jpg)"></div><div class="txt"><span class="title">APP应用框架正式上线</span><span class="time">[ 2016-05-29 ]</span><p>
+	魔方动力在多年客户需求研发下，发现客户对实实在在的应用客户端还是比较在意的，为此特别开发出可以打包在线应用的框架，可以将用户的在线系统打包成PC客户端和APP客户端，从而实现线上应用也有可以安装的客户端。
+
+
+	
+
+
+	安卓APP下载试用：http://pan.baidu.com/...</p></div></a></li><li class="col-xs-12 col-sm-6 col-md-6"><a href="article-20160529211800.aspx"><div class="img" style="background-image: url(Images/default_image.jpg)"></div><div class="txt"><span class="title">McOffice V1办公管理系统正式发布</span><span class="time">[ 2016-05-29 ]</span><p>魔方动力团队前身具有多年的ERP、CRM系统开发经验，在经过多年的技术沉淀后，研发了属于自己的OA办公管理系统--McOffice。
+
+McOfficeV1是面向于中小企业的轻量级OA办公系统，旨在帮助中小企业实现低成本的办公自动化。主要功能包括系统管理、角色管理、用户管理、考勤管理、流程管理、...</p></div></a></li><li class="col-xs-12 col-sm-6 col-md-6"><a href="article-20160529211454.aspx"><div class="img" style="background-image: url(Images/default_image.jpg)"></div><div class="txt"><span class="title">McCart V5购物车系统正式发布</span><span class="time">[ 2016-05-29 ]</span><p>
+	魔方动力旗下的购物车系统--McCart经过5年的发展，今天正式发布V5。
+
+V5，并不是一个普通的版本号，更是里程碑的跨越，它包含很多层面的意思：可以理解为时下流行用语“威武”（O(∩_∩)O哈哈~），或是5周年纪念版，又或是最最重要的转折--HTML5的全面使用。
+
+不管怎么说，V...</p></div></a></li><li class="col-xs-12 col-sm-6 col-md-6"><a href="article-20160529211223.aspx"><div class="img" style="background-image: url(Images/default_image.jpg)"></div><div class="txt"><span class="title">McCMS V5内容管理系统Sql Server版正式发布</span><span class="time">[ 2016-05-29 ]</span><p>
+	魔方动力旗下的内容管理系统--McCMS经过5年的发展，今天正式发布V5。
+
+V5，并不是一个普通的版本号，更是里程碑的跨越，它包含很多层面的意思：可以理解为时下流行用语“威武”（O(∩_∩)O哈哈~），或是5周年纪念版，又或是最最重要的转折--HTML5的全面使用。
+
+不管怎么说，V...</p></div></a></li></ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="contactBox">
+                    <div id="ContactDiv"><p>联系人：张先生</p>
+
+<p>手机：18575265365</p>
+
+<p>QQ：47366571</p>
+
+<p>邮箱：mojocube@qq.com</p>
+
+<p>地址： 广东省惠州市惠城区麦科特大道</p></div>
+                    <div>
+                        <img src="Images/WeChat.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:10px; border-bottom:solid 1px #F9F9F9;"></div>
+    
+    <div style="padding:20px 0; text-align:center;">
+
+        <a href="http://www.mojocube.com/jump.aspx?url=y9nj05" target="_blank"><img src="images/dl_android.png" style="width:120px; margin:0 10px;" alt="安卓下载" /></a>
+        <a href="http://www.mojocube.com/jump.aspx?url=fv1udj" target="_blank"><img src="images/dl_ios.png" style="width:120px; margin:0 10px;" alt="IOS下载" /></a>
+        <a href="http://pan.baidu.com/s/1dETu0db" target="_blank" class="hidden-xs"><img src="images/dl_pc.png" style="width:120px; margin:0 10px;" alt="PC下载" /></a>
+
+    </div>
+
+    <div style="background:url(Images/bg.jpg) #000; background-size:100% 100%; padding:30px; margin-bottom:-30px;">
+
+        <div class="detailUrl"><a href="https://520mc.taobao.com/" target="_blank" style="color:#fff; border:solid 1px #fff;">立即购买</a></div>
+        <div style="text-align:center; font-size:12pt; color:#fff;">
+            企业官网「轻松搭建」
+        </div>
+
+    </div>
+
+    <!-- 底部菜单、版权信息 -->
+    <footer>
+        
+
+<div class="copyright">
+    <p>
+        <div id="WUC_Footer_LinkDiv"><a href="http://www.mojocube.com/" target="_blank" style="color:#fff;">魔方动力官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://oa.mojocube.com/" target="_blank" style="color:#fff;">魔方OA</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://520mc.taobao.com/" target="_blank" style="color:#fff;">淘宝旗舰店</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://shop.zbj.com/12953447/" target="_blank" style="color:#fff;">猪八戒旗舰店</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://wanwang.aliyun.com/hosting/?spm=5176.8142029.388261.211.LOrQir" target="_blank" style="color:#fff;">阿里云主机</a></div>
+    </p>
+    <p class="copyright_p"><span id="WUC_Footer_lblCopyRight"><p>&copy; 2018&nbsp;MojoCube All Rights Reserved. 粤ICP备14029963号</p></span></p>
+</div>
+
+<div id="WUC_Footer_HtmlCode"></div>
+    </footer>
+    
+    <!--客服面板-->
+    
+
+<script type="text/javascript" src="js/common.js"></script>
+    
+<!--客服面板-->
+<!--电脑版-->
+<div id="cmsFloatPanel">
+
+    <div class="ctrolPanel">
+        <a class="service" href="#"></a>
+        <a class="message" href="#"></a>
+        <a class="qrcode" href="#"></a>
+        <a class="arrow" title="返回顶部" href="#"></a>
+    </div>
+
+    <div class="servicePanel">
+        <div class="servicePanel-inner">
+            <div class="serviceMsgPanel">
+                <div class="serviceMsgPanel-hd"><a href="#"><span>关闭</span></a></div>
+                <div id="WUC_Service_ServiceDiv" class="serviceMsgPanel-bd"><div class="msggroup"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=47366571&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="售前咨询" />售前咨询</a></div><div class="msggroup"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=47366571&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="技术咨询" />技术咨询</a></div><div class="msggroup"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=47366571&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="合作咨询" />合作咨询</a></div><div class="msggroup"><a target="blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=julysee&site=cntaobao&s=1&charset=utf-8"><img src="http://amos.im.alisoft.com/online.aw?v=2&uid=julysee&site=cntaobao&s=1&charset=utf-8" alt="点击联系我" /></a></div></div>
+                <div class="serviceMsgPanel-ft"></div>
+            </div>
+            <div class="arrowPanel">
+                <div class="arrow02"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="messagePanel">
+        <div class="messagePanel-inner">
+            <div class="formPanel">
+                <div class="formPanel-bd">
+                    <div id="WUC_Service_ShareDiv"><div class="jiathis_style_32x32">
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_tqq"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_renren"></a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                </div>
+                <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script></div>
+                    <a type="button" class="btn btn-default btn-xs" href="#" style="margin: 6px 0px 0px 10px;">关闭</a>
+                </div>
+            </div>
+            <div class="arrowPanel">
+                <div class="arrow01"></div>
+                <div class="arrow02"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="qrcodePanel">
+        <div class="qrcodePanel-inner">
+            <div class="codePanel">
+                <div class="codePanel-hd"><span style="float:left">用手机扫描二维码</span><a href="#"><span>关闭</span></a></div>
+                <div class="codePanel-bd">
+                    <img id="WUC_Service_imgQR" src="DrawQR.aspx?data=http://www.mojocube.com/Admin/Site/Cache.aspx" style="border-width:0px;width:180px; height:180px;" />
+                </div>
+            </div>
+            <div class="arrowPanel">
+                <div class="arrow01"></div>
+                <div class="arrow02"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+<div id="WUC_Service_MobileDiv"><div id="serviceBox" style="display:none"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=47366571&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="售前咨询" />售前咨询</a></div></div>
+
+<script type="text/javascript" src="js/online.js"></script>
+
+<!--电脑版 end-->
+
+<!--手机版-->
+<nav class="navbar-default navbar-fixed-bottom footer_nav" style="background:#fafafa;">
+    <div class="foot_nav"><a href="javascript:mShare()"><span class="glyphicon glyphicon-share btn-lg" aria-hidden="true"></span>分享</a></div>
+    <div class="foot_nav"><a href="tel:18575265365"><span class="glyphicon glyphicon-phone btn-lg" aria-hidden="true"></span>手机</a></div>
+    <div class="foot_nav" id="serviceBtn"><a onclick="showService()"><span class="glyphicon glyphicon glyphicon-headphones btn-lg" aria-hidden="true"></span>客服</a></div>
+    <div class="foot_nav"><a id="gototop" href="#"><span class="glyphicon glyphicon-circle-arrow-up btn-lg" aria-hidden="true"></span>顶部</a></div>
+    <div id="mShareBox" style="position:fixed; display:none; z-index:999; bottom:47px; width:100%; height:45px; background:#fff; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:5px;">
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style_m"></div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+    </div>
+</nav>
+<!--手机版 end-->
+
+<script type="text/javascript">
+    function mShare() {
+        $("#mShareBox").toggle();
+        $("#serviceBox").hide();
+    }
+
+    if ($(".banner .slider__wrapper li").length == 0) {
+        $(".banner").addClass("emptyBanner");
+    }
+
+    function showService() {
+        $("#mShareBox").hide();
+        $("#serviceBox").toggle();
+    }
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

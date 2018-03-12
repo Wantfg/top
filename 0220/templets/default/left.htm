@@ -1,0 +1,30 @@
+<div class="col-xs-12 col-sm-4 col-md-3">
+  <div class="left_nav" id="categories">
+    <h2 class="title_h2">{dede:field name='typeid' function="GetTopTypename(@me)"/}</h2>
+    <ul class="left_nav_ul" id="firstpane">
+      {dede:channel type='son' currentstyle="
+      <li><a href='~typelink~' class='biglink'>~typename~</a></li>
+      "}
+      <li> <a href="[field:typeurl/]">[field:typename/]</a></li>
+      {/dede:channel}
+    </ul>
+  </div>
+  <div class="left_news"> {dede:type typeid='10'}
+    <h2 class="title_h2">[field:typename/]</h2>
+    {/dede:type}
+    <ul class="index_news">
+      {dede:arclist typeid='10' row='5' titlelen='50' orderby='pubdate'}
+      <li><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+      {/dede:arclist}
+    </ul>
+  </div>
+  <div class="index_contact"> {dede:type typeid='15'}
+    <h2 class="title_h2">[field:typename/]</h2>
+    {/dede:type}
+    <p style="padding-top:20px;">QQ：{dede:global.cfg_qq/}</p>
+    <p>电话：{dede:global.cfg_tel/}</p>
+    <p>传真：{dede:global.cfg_fax/}</p>
+    <p>邮箱：{dede:global.cfg_email/}</p>
+    <p>地址： {dede:global.cfg_add/}</p>
+  </div>
+</div>
