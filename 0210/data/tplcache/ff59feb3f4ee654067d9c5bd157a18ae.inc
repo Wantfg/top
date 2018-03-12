@@ -1,0 +1,1 @@
+<li class="slider__item"><a><img class='img' src="[field:picname/]" alt="[field:title/]"/><img class='mobileimg' src="[field:picname/]"/></a></li>

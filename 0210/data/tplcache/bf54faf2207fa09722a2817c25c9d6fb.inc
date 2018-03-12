@@ -1,0 +1,1 @@
+<li> <span> [field:global.autoindex/] </span> <a href="[field:arcurl/]"> [field:title/] </a> <span class="time"> [field:pubdate function="MyDate('Y-m-d',@me)"/] </span> </li>
