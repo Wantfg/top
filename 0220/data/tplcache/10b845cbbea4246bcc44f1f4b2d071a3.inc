@@ -1,0 +1,1 @@
+<h2 class="title_h2">[field:typename/]</h2>
