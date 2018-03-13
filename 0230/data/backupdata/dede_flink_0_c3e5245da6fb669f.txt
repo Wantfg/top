@@ -1,0 +1,7 @@
+INSERT INTO `dede_flink` VALUES('29','1','http://www.dede58.com/','织梦模板','','','','1500104447','1','2');
+INSERT INTO `dede_flink` VALUES('32','1','http://www.dede58.com/host/','织梦主机','','','','1516757900','1','2');
+INSERT INTO `dede_flink` VALUES('11','1','http://www.adashuo.com/','创业找项目','','','','1496988267','1','2');
+INSERT INTO `dede_flink` VALUES('13','1','http://www.sucai58.com/','建站素材','','','','1496988284','1','2');
+INSERT INTO `dede_flink` VALUES('33','1','http://www.aitecms.com/','企业网站模板','','','','1516757917','1','2');
+INSERT INTO `dede_flink` VALUES('30','1','http://www.zhangguizi.com/','掌柜子','','','','1503906125','1','2');
+INSERT INTO `dede_flink` VALUES('31','1','http://www.yiyongtong.com/','微信小程序开发','','','','1510711078','1','2');

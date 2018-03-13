@@ -1,0 +1,18 @@
+<div class="top container"> <a href="/"><img src="/skin/images/logo.jpg" alt="" class="logo fl"/></a> <img src="/skin/images/toptell.jpg" alt="" class="fr"/> </div>
+<div class="nav">
+  <ul class="container">
+    <li><a href="/" {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='hover' ":@me="";{/dede:field}>首页</a></li>
+    {dede:channel type='top' row='6' currentstyle="
+    <li><a href='~typelink~' class='hover'>~typename~</a></li>
+    "}
+    <li><a href="[field:typeurl/]" >[field:typename/]</a></li>
+    {/dede:channel}
+  </ul>
+</div>
+<div class="flexslider">
+  <ul class="slides">
+    {dede:arclist typeid='14'}
+    <li style="background:url([field:picname/]) 50% 0 no-repeat;"></li>
+    {/dede:arclist}
+  </ul>
+</div>
