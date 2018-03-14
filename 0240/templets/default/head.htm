@@ -1,0 +1,36 @@
+<header>
+  <div class="topBox">
+    <div class="borderBottom">
+      <div class="container">
+        <div class="row">
+          <div class="welcomeBox">{dede:global.cfg_gg/}</div>
+          <div class="topContactBox"><img src="/skin/images/tel.png" /><a>{dede:global.cfg_tel/}</a><img src="/skin/images/mail.png" /><a>{dede:global.cfg_email/}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-static-top navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/"><img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"/></a></div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/" {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='selecteded' ":@me="";{/dede:field}>网站首页</a></li>
+          {dede:channelartlist typeid='top' currentstyle='selecteded'}
+          <li class="dropdown"><a href="{dede:field name='typeurl'/}" class="dropdown-toggle {dede:field.currentstyle/}" data-toggle="dropdown">{dede:field name='typename'/}</a><a href="#" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {dede:channel type='son' noself='yes'}
+              <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+              {/dede:channel}
+            </ul>
+          </li>
+          {/dede:channelartlist}
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </nav>
+</header>
