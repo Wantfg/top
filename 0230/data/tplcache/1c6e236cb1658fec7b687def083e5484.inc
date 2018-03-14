@@ -1,0 +1,1 @@
+<img src="[field:picname/]" alt="[field:title/]" class="video" style="height:200px; width:400px;"/>

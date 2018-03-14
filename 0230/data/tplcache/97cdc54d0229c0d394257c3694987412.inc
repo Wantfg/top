@@ -1,0 +1,1 @@
+<li style="background:url([field:picname/]) 50% 0 no-repeat;"></li>

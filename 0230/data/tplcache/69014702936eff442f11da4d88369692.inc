@@ -1,0 +1,1 @@
+<div class="news_tit"> <span>[field:typename/]</span> <a href="[field:typelink/]" class="more">more</a> </div>

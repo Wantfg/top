@@ -1,0 +1,1 @@
+<div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg"> <a title="[field:title/]" href='[field:arcurl/]'> <span class="imgLink-hover"> <span class="hover-link"> </span> </span> <img src="[field:picname/]" alt="[field:title/]"> </a> <a class="productTitle" href="[field:arcurl/]" title="[field:title/]"> [field:title/] </a> </div>
