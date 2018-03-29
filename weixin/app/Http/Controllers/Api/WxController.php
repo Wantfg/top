@@ -37,6 +37,13 @@ class WxController extends Controller
     {
         $this->app->server->push(function ($message) {
             DB::table('test')->insert([
+                'remark1' => 13
+            ]);
+            DB::table('test')->insert([
+                'test' => $message,
+                'remark1' => 12
+            ]);
+            DB::table('test')->insert([
                 'test' => json_encode($message),
                 'remark1' => 11
             ]);
