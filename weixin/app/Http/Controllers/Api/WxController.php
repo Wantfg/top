@@ -34,7 +34,6 @@ class WxController extends Controller
     //
     public function index()
     {
-        echo "欢迎开始微信世界";
         $response = $this->app->server->serve();
         // 将响应输出
         return $response; // Laravel 里请使用：return $response;
