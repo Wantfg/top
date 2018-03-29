@@ -35,6 +35,9 @@ class WxController extends Controller
     //
     public function index()
     {
+        DB::table('test')->insert([
+            'remark1' => 14
+        ]);
         $this->app->server->push(function ($message) {
             DB::table('test')->insert([
                 'remark1' => 13
