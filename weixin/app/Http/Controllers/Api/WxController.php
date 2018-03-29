@@ -34,12 +34,6 @@ class WxController extends Controller
     //
     public function index()
     {
-        //配置服务----------
-//        $response = $this->app->server->serve();
-        // 将响应输出
-//        return $response; // Laravel 里请使用：return $response;
-        //配置服务----------END
-
         $this->app->server->push(function ($message) {
             switch ($message['MsgType']) {
                 case 'event':
@@ -71,6 +65,10 @@ class WxController extends Controller
 
             // ...
         });
+
+        $response = $this->app->server->serve();
+        // 将响应输出
+        return $response; // Laravel 里请使用：return $response;
 
     }
 }
