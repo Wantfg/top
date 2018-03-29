@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 
 class WxController extends Controller
@@ -35,6 +36,10 @@ class WxController extends Controller
     public function index()
     {
         $this->app->server->push(function ($message) {
+            DB::table('test')->insert([
+                'test' => json_encode($message),
+                'remark1' => 11
+            ]);
             switch ($message['MsgType']) {
                 case 'event':
                     return '收到事件消息';
@@ -67,6 +72,10 @@ class WxController extends Controller
         });
 
         $response = $this->app->server->serve();
+        DB::table('test')->insert([
+            'test' => $response,
+            'remark1' => 1
+        ]);
         // 将响应输出
         return $response; // Laravel 里请使用：return $response;
 
