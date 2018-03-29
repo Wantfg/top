@@ -13,7 +13,7 @@ return [
     'app_id'  => 'wxb4e53c3d606c55ae',         // AppID
     'secret'  => 'ddedbc317f08f374a493985536398bf3',     // AppSecret
     'token'   => 'ASDjwi2141hiods',          // Token
-    'aes_key' => '',                    // EncodingAESKey，兼容与安全模式下请一定要填写！！！
+    'aes_key' => '0SfABrOf6j68kWRJRGn7RO9ZGTJhQfE45oQ0W40eLdZ',                    // EncodingAESKey，兼容与安全模式下请一定要填写！！！
 
     /**
      * 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
