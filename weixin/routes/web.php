@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('api/wx','Api\WxController@index');
+Route::any('api/wx','Api\WxController@index');
