@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/market',301);
 
+Route::get('market','Market\IndexController@index');
+Route::get('market/product/{p_id?}','Market\IndexController@product');
+
+//微信公众号入口
 Route::any('api/wx','Api\WxController@index');
