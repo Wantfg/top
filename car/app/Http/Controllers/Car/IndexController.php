@@ -39,17 +39,16 @@ class IndexController extends Controller
                 preg_match_all($brand_name_factory_pattern,$brand_name_each,$brand_name_factory);
                 $brand_name_factory = $brand_name_factory[1]; //品牌旗下的厂商名称
                 preg_match_all($brand_series_pattern,$brand_name_each,$brand_series);
-                foreach ($brand_series[0] as $it){
+                foreach ($brand_series[0] as $kk => $it){
                     preg_match_all($in_sale_series_pattern,$it,$in_sale_series);
                     preg_match_all($not_sale_series_pattern,$it,$not_sale_series);
                     //将车型的汽车之家id设置为键值
                     foreach ($in_sale_series[2] as $id_K => $item){
-                        $series[] = ['autohome_id' => $in_sale_series[1][$id_K],'name' => $in_sale_series[2][$id_K],'in_sale' => 1];
+                        $series[$kk][] = ['autohome_id' => $in_sale_series[1][$id_K],'name' => $in_sale_series[2][$id_K],'in_sale' => 1];
                     }
                     foreach ($not_sale_series[2] as $id_K => $item){
-                        $series[] = ['autohome_id' => $not_sale_series[1][$id_K],'name' => $not_sale_series[2][$id_K],'in_sale' => 0];
+                        $series[$kk][] = ['autohome_id' => $not_sale_series[1][$id_K],'name' => $not_sale_series[2][$id_K],'in_sale' => 0];
                     }
-
                 }
                 $car_info[$k]['brand_info'][] = array(
                     'brand_name' => $brand_name,
@@ -67,7 +66,7 @@ class IndexController extends Controller
                     ]);
                 }
                 //保存厂商
-                foreach ($brand_name_factory as $item){
+                foreach ($brand_name_factory as $kk => $item){
                     $factory_id = DB::table('car_factory')
                         ->where('brand_id',$brand_id)
                         ->where('factory_name',$item)
@@ -79,7 +78,7 @@ class IndexController extends Controller
                         ]);
                     }
                     //保存车系名称
-                    foreach ($series as $s){
+                    foreach ($series[$kk] as $s){
                         $series_id = DB::table('car_series')
                             ->where('brand_id',$brand_id)
                             ->where('factory_id',$factory_id)
@@ -100,7 +99,7 @@ class IndexController extends Controller
 
             }
         }
-//        var_dump($car_info);
+        var_dump($car_info);
 //        $a = DB::table('car_brand')->get();
 //
 //        var_dump($a);
