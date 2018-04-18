@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'Car\IndexController@index');
+Route::get('/', 'Car\IndexController@brandLists');
