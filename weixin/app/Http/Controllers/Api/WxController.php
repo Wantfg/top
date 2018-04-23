@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use EasyWeChat\Factory;
+use EasyWeChat\Kernel\Messages\Transfer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -45,7 +46,12 @@ class WxController extends Controller
                     return '收到事件消息';
                     break;
                 case 'text':
-                    return '收到文字消息';
+                    if($message['Content'] == '人工'){
+                        return new Transfer();
+                    }else{
+                        return '收到文字消息';
+                    }
+
                     break;
                 case 'image':
                     return '收到图片消息';
@@ -72,12 +78,10 @@ class WxController extends Controller
         });
 
         $response = $this->app->server->serve();
-        DB::table('test')->insert([
-            'test' => $response,
-            'remark1' => 'out_info'
-        ]);
+
         // 将响应输出
-        return $response; // Laravel 里请使用：return $response;
+        return $response;
 
     }
+
 }
