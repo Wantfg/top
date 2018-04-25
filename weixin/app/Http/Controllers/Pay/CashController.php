@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers\Pay;
 
+use App\Http\Controllers\WechatController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class CashController extends Controller
+class CashController extends WechatController
 {
+
     public function index()
+    {
+        $info = $this->app->template_message->getPrivateTemplates();
+        dd($info);
+    }
+    
+    public function service()
     {
         echo ' <script>
 		var _hmt = _hmt || [];

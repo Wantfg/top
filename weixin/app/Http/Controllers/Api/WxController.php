@@ -2,37 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
-use EasyWeChat\Factory;
+use App\Http\Controllers\WechatController;
 use EasyWeChat\Kernel\Messages\Transfer;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 
-class WxController extends Controller
+class WxController extends WechatController
 {
-
-    private $app = '';
-
-    public function __construct()
-    {
-        $config = [
-            'app_id' => config('wechat.app_id'),
-            'secret' => config('wechat.secret'),
-            'token'   => config('wechat.token'),          // Token
-            'aes_key' => config('wechat.aes_key'),        // EncodingAESKey，兼容与安全模式下请一定要填写！！！
-
-            // 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
-            'response_type' => 'array',
-
-            'log' => [
-                'level' => 'debug',
-                'file' => __DIR__.'/wechat.log',
-            ],
-        ];
-        $this->app = Factory::officialAccount($config);
-    }
-
     //
     public function index()
     {
@@ -46,12 +23,11 @@ class WxController extends Controller
                     return '收到事件消息';
                     break;
                 case 'text':
-                    if($message['Content'] == '人工'){
+                    if ($message['Content'] == '人工') {
                         return new Transfer();
-                    }else{
+                    } else {
                         return '收到文字消息';
                     }
-
                     break;
                 case 'image':
                     return '收到图片消息';
@@ -81,6 +57,10 @@ class WxController extends Controller
 
         // 将响应输出
         return $response;
+    }
+
+    public function getConfigInfo($name)
+    {
 
     }
 
