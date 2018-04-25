@@ -11,7 +11,7 @@ class CashController extends WechatController
     public function index()
     {
         $info = $this->app->template_message->getPrivateTemplates();
-        dd($info);
+        var_dump($info,112);
     }
     
     public function service()
