@@ -10,18 +10,9 @@ class CashController extends WechatController
 
     public function index(Request $request)
     {
-        $info = $this->app->template_message->send([
-            'touser' => $request->session()->get('openid'),
-            'template_id' => 'QFQ2GO3_pRPcvMeuBzvwQ-4s7f-4QSly9p2eBUe9NHE',
-            'url' => 'https://www.easywechat.com/',
-            'data' => [
-                'first' => '你好！吧啦吧啦',
-                'token' => ['0022223','#f9421b'],
-                'remark' => '这里是描述'
-            ],
-        ]);
 
-        dd($request->session()->all(),$request->session()->get('openid'),$info);
+
+        dd($request->session()->all());
     }
     
     public function service()

@@ -25,6 +25,19 @@ class WxController extends WechatController
                 case 'text':
                     if ($message['Content'] == '人工') {
                         return new Transfer();
+                    } else if($message['Content'] == '112'){
+                        $response = $this->app->template_message->send([
+                            'touser' => $message['FromUserName'],
+                            'template_id' => 'QFQ2GO3_pRPcvMeuBzvwQ-4s7f-4QSly9p2eBUe9NHE',
+                            'url' => 'https://www.easywechat.com/',
+                            'data' => [
+                                'first' => '你好！吧啦吧啦',
+                                'token' => ['0022223', '#f9421b'],
+                                'remark' => '这里是描述'
+                            ],
+                        ]);
+                        return $response;
+                        
                     } else {
                         return '收到文字消息';
                     }
