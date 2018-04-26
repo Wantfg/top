@@ -12,7 +12,6 @@ class CashController extends WechatController
     {
 
 
-        dd($request->session()->all());
     }
     
     public function service()
