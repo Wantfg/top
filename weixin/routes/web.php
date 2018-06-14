@@ -18,3 +18,7 @@ Route::get('market/product/{p_id?}','Market\IndexController@product');
 
 //微信公众号入口
 Route::any('api/wx','Api\WxController@index');
+
+
+//多通道支付
+Route::get('cash','Pay\CashController@index');
