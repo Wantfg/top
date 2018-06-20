@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\wamp64\www\top\base\public/../application/admin/view/default/login\index.html";i:1511097513;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\wamp64\www\top\base\public/../application/admin/view/default/login\index.html";i:1529418969;}*/ ?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <div class="row row-centered">
         <div class="well col-md-4 col-centered" id="itemBox">
             <form class="viform" action="<?php echo url('login/index'); ?>" method="post" class="layui-form">
-                <h3 class="welcome"><i class="login-logo"></i>TwoThink管理平台</h3>
+                <h3 class="welcome">管理平台</h3>
                 <div class="form-group has-success has-feedback">
                     <label class="control-label sr-only"></label>
                     <div class="input-group">

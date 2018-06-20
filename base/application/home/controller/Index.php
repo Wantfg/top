@@ -18,6 +18,7 @@ class Index extends Home{
 
 	//系统首页
     public function index(){
+
         $category = model('Category')->getTree();
         $document = new Document();
         $lists    = $document->lists(null);
