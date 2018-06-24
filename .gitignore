@@ -4,3 +4,4 @@
 .idea
 /weixin/app/Http/Controllers/Api/wechat.log
 /car/storage
+/base/runtime

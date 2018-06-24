@@ -12,14 +12,21 @@ use think\Db;
 use think\modelinfo\System;
 
 /**
- * @title 系统配置
- * @author 小矮人  <82550565@qq.com>
+ * Class Service
+ * @package app\admin\controller
  */
-class Service extends Admin {
+class Service extends Admin
+{
 
-    public function call($cate_id = 2)
+    public function call()
     {
         $param = $this->request->param();
+
+        $json = '{"field":["id","title","type","update_time","status","view"],"list_field":[{"name":"id","field":["id"],"title":"\u7f16\u53f7"},{"name":"title","field":["title"],"title":"\u6807\u9898","href":"[EDIT]"},{"name":"type","field":["type"],"title":"\u7c7b\u578b"},{"name":"update_time","field":["update_time"],"title":"\u6700\u540e\u66f4\u65b0"},{"name":"status","field":["status"],"title":"\u72b6\u6001"},{"name":"view","field":["view"],"title":"\u6d4f\u89c8"},{"name":"id","field":["id"],"title":"\u64cd\u4f5c","href":"[EDIT]|\u7f16\u8f91,[DELETE]|\u5220\u9664"}],"pk":"id","button":[{"title":"\u65b0\u589e","type":"select","extra":[{"title":"\u6587\u7ae0","url":"article\/add?cate_id=2&model_id=2&pid=0","class":"ajax-get iframe"},{"title":"\u4e0b\u8f7d","url":"article\/add?cate_id=2&model_id=3&pid=0","class":"ajax-get iframe"}],"class":"bg-aqua"},{"title":"\u542f\u7528","url":"setstatus?status=1&cate_id=2","icon":"","class":"bg-teal ajax-post","ExtraHTML":"target-form=\"ids\""},{"title":"\u7981\u7528","url":"setstatus?status=0&cate_id=2","icon":"","class":"bg-yellow ajax-post confirm","ExtraHTML":"target-form=\"ids\""},{"title":"\u5220\u9664","url":"setstatus?status=-1&cate_id=2","icon":"","class":"bg-red ajax-post confirm","ExtraHTML":"target-form=\"ids\""}],"url":"\/admin\/article\/index.html"}';
+        if ($this->request->isPost()) {
+            $json2 = '{"total":1,"per_page":"10","current_page":1,"last_page":1,"data":[{"1":"1","2":"<a href=\"\/admin\/article\/edit\/id\/1\/model\/2\/cate_id\/2.html\">TwoThink2.0正式版<\/a>","3":"2","4":"1504710688","5":"1","6":"121","7":"<a href=\"\/admin\/article\/edit\/id\/1\/model\/2\/cate_id\/2.html\">编辑<\/a> <a href=\"\/admin\/article\/setstatus\/status\/-1\/ids\/1\/cate_id\/2.html\">删除<\/a>"}],"code":1}';
+            return $json2;
+        }
 
 //        var_dump($param);
 //        if($cate_id===null)
@@ -57,7 +64,7 @@ class Service extends Admin {
 //            return $list;
 //        }
 //
-//        $this->assign('meta_title', '内容管理');
+        $this->assign('meta_title', '支付->服务订单');
 //        //获取面包屑信息
 //        /*文档列表面包屑*/
 //        if($nav_crumbs= get_parent_category($cate_id)){
@@ -102,10 +109,10 @@ class Service extends Admin {
 //        ];
 //
 //        $model_info['url'] = $this->request->url();
-//        $this->assign('model_info',$model_info);
+        $this->assign('model_info', json_decode($json, true));
 //        // 记录当前列表页的cookie
 //        Cookie('__forward__',$_SERVER['REQUEST_URI']);
 //        $tpl = !empty($model_info['template_list'])?'think/'.$model_info['template_list']:'base/list';
-        return $this->fetch('list');
+        return $this->fetch();
     }
 }

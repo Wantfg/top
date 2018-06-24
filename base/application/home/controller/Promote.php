@@ -21,7 +21,7 @@ class Promote extends Home{
 
     }
 
-    public function ()
+    public function mobileSet()
     {
         
     }

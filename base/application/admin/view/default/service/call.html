@@ -5,23 +5,23 @@
 <div class="row">
     <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom-5">
         <!-- 按钮组 -->
-        <div class="two-btn">
-            {notempty name="model_info.button"}
-            {volist name="model_info.button" id="button"}
-            {present name="button['type']"}
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-sm {$button.class} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {$button.title}
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    {volist name="button.extra" id="extra"}
-                    <li><a href="{$extra.url|url}">{$extra.title}</a></li>
-                    {/volist}
-                </ul>
-            </div>
-            {else /}
-            <div type="button" class="btn btn-sm {$button.class}" url="{$button.url|url}" {$button.ExtraHTML}><i class="{$button.icon}"></i>{$button.title}</div>
+            <div class="two-btn">
+                {notempty name="model_info.button"}
+                {volist name="model_info.button" id="button"}
+                {present name="button['type']"}
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm {$button.class} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {$button.title}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {volist name="button.extra" id="extra"}
+                        <li><a href="{$extra.url|url}">{$extra.title}</a></li>
+                        {/volist}
+                    </ul>
+                </div>
+                {else /}
+                <div type="button" class="btn btn-sm {$button.class}" url="{$button.url|url}" {$button.ExtraHTML}><i class="{$button.icon}"></i>{$button.title}</div>
             {/present}
             {/volist}
             {/notempty}
