@@ -10,23 +10,20 @@
 namespace app\home\controller;
 use app\home\model\Document;
 /**
- * 前台首页控制器
- * 主要获取首页聚合数据
+ * 展示页
+ * 
  */
-class Index extends Home{
+class Promote extends Home{
 
 
-	//系统首页
+	//留空默认页
     public function index(){
 
-        $category = model('Category')->getTree();
-        $document = new Document();
-        $lists    = $document->lists(null);
-        $this->assign('category',$category);//栏目
-        $this->assign('lists',$lists);//列表
-        $this->assign('page',model('Document')->page);//分页
+    }
 
-        return $this->fetch();
+    public function ()
+    {
+        
     }
 
 }

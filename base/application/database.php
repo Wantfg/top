@@ -11,13 +11,13 @@ return [
     // 数据库类型
     'type'           => 'mysql',
     // 服务器地址
-    'hostname'       => '127.0.0.1',
+    'hostname'       => '39.108.129.59',
     // 数据库名
-    'database'       => 'twothink',
+    'database'       => 'base',
     // 用户名
-    'username'       => 'root',
+    'username'       => 'MyTopWay',
     // 密码
-    'password'       => '',
+    'password'       => 'BBiittyy-*7759',
     // 端口
     'hostport'       => '3306',
     // 连接dsn
