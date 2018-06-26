@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="has-topbar has-bottombar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>乐贷帮</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="__PUBLIC__/home/css/mui.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/home/css/lebansucce.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="bannerBOX">
+    <img src="__PUBLIC__/home/images/lebangdai.png">
+    <div class="bannerlunbo2">*本平台不接受普通全日制高校在读学生或未成年人申请服务！</div>
+    <div class="bannerlunbo">
+        <img src="__PUBLIC__/home/images/huo.png">
+        <div class="lunbo">
+            <ul>
+                {volist name="loops" id="vo"}
+                    <li>手机号<span>{$vo.mobile_a}xxxx{$vo.mobile_b}</span>,<span>{$vo.name}{$vo.sex}</span>已成功下款<span>{$vo.money}</span>元</li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+    <div class="item_b">
+        <div class="check">
+            <input id="checkbox1" class="checkbox" type="checkbox" />
+            <span>已阅读并同意</span><a href="">《服务合同》</a>
+        </div>
+    </div>
+    <div class="cre_ban">
+        <div class="cre_left">
+            <div>客服热线:4000-000-000</div>
+            <div>投诉邮箱:admin@admin.com</div>
+        </div>
+        <div class="cre_right" id="sumbitCilk">
+            <div>立刻申请</div>
+            <div>(¥188/三个月)</div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="__PUBLIC__/home/js/mui.min.js"></script>
+<script src="__PUBLIC__/home/js/jquery.min.js"></script>
+<script>
+    function lunbo(id, height) {
+        var ul = $(id);
+        var liFirst = ul.find('li:first');
+        $(id).animate({
+            top: height
+        }).animate({
+            "top": 0
+        }, 0, function() {
+            var clone = liFirst.clone();
+            $(id).append(clone);
+            liFirst.remove();
+        })
+    }
+    setInterval("lunbo('ul','-41px')", 4000)
+    $(document).ready(function() {
+        $(".checkbox").click(function() {
+            if($(".check").css("background").indexOf('checkok') < 0) {
+                $(".check").css("background", "url(__PUBLIC__/home/images/checkok.png) left center no-repeat");
+            } else {
+                $(".check").css("background", "url(__PUBLIC__/home/images/checkedss.png) left center no-repeat");
+            }
+        })
+    });
+
+    //业务提交
+    document.getElementById("sumbitCilk").addEventListener('tap', function() {
+        var checktf = $("input[type='checkbox']").is(':checked');
+        if($(".check").css("background").indexOf('checkok') < 0) {
+            mui.toast("请勾选服务合同");
+            return;
+        } else {
+            //后台请求中.....
+            mui.toast("请联系专员")
+
+        }
+    })
+</script>
+
+</html>
