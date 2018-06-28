@@ -57,6 +57,11 @@ class AuthManager extends Admin {
             'url'=>'writegroup'
         ]
     ];
+
+    public function creategroup()
+    {
+        var_dump(1112);
+    }
     /**
      * 管理员用户组数据写入/更新
      * @author 小矮人 82550565@qq.com

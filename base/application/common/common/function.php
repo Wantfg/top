@@ -10,6 +10,23 @@
 define('TWOTHINK_VERSION','3.0.0 20171119' );
 
 use think\Db;
+
+/**
+ *
+ * 产生随机字符串，不长于32位
+ * @param int $length
+ * @return string 产生的随机字符串
+ */
+function getRandStr($length = 32)
+{
+    $chars = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    $str = "";
+    for ($i = 0; $i < $length; $i++) {
+        $str .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
+    }
+    return $str;
+}
+
 /**
  * 执行SQL文件
  * $sql_path sql文件路径

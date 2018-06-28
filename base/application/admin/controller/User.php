@@ -126,7 +126,7 @@ class User extends Admin {
             $User   =   new Uc;
             $uid    =   $User->register($username, $password, $email,'','admin');
             if(0 < $uid){ //注册成功
-                $user = array('uid' => $uid, 'nickname' => $username, 'status' => 1);
+                $user = array('uid' => $uid, 'nickname' => $username, 'code' => getRandStr(15), 'status' => 1);
                 if(!db('Member',[],false)->insert($user)){
                     $this->error('用户添加失败！');
                 } else {
