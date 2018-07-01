@@ -20,6 +20,12 @@ class Service extends Admin
 
     public function call()
     {
+
+        $uid_info = db('member')->alias('m')->where('m.uid',session('user_auth.uid'))->join('__AUTH_GROUP_ACCESS__ aga','m.uid = aga.uid')->find();
+        var_dump(session(''),$uid_info);
+        if(!empty($uid_info['code'])){
+            $this->assign('code',$uid_info['code']);
+        }
         $param = $this->request->param();
 
         $json = '{"field":["id","title","type","update_time","status","view"],"list_field":[{"name":"id","field":["id"],"title":"\u7f16\u53f7"},{"name":"title","field":["title"],"title":"\u6807\u9898","href":"[EDIT]"},{"name":"type","field":["type"],"title":"\u7c7b\u578b"},{"name":"update_time","field":["update_time"],"title":"\u6700\u540e\u66f4\u65b0"},{"name":"status","field":["status"],"title":"\u72b6\u6001"},{"name":"view","field":["view"],"title":"\u6d4f\u89c8"},{"name":"id","field":["id"],"title":"\u64cd\u4f5c","href":"[EDIT]|\u7f16\u8f91,[DELETE]|\u5220\u9664"}],"pk":"id","button":[{"title":"\u65b0\u589e","type":"select","extra":[{"title":"\u6587\u7ae0","url":"article\/add?cate_id=2&model_id=2&pid=0","class":"ajax-get iframe"},{"title":"\u4e0b\u8f7d","url":"article\/add?cate_id=2&model_id=3&pid=0","class":"ajax-get iframe"}],"class":"bg-aqua"},{"title":"\u542f\u7528","url":"setstatus?status=1&cate_id=2","icon":"","class":"bg-teal ajax-post","ExtraHTML":"target-form=\"ids\""},{"title":"\u7981\u7528","url":"setstatus?status=0&cate_id=2","icon":"","class":"bg-yellow ajax-post confirm","ExtraHTML":"target-form=\"ids\""},{"title":"\u5220\u9664","url":"setstatus?status=-1&cate_id=2","icon":"","class":"bg-red ajax-post confirm","ExtraHTML":"target-form=\"ids\""}],"url":"\/admin\/article\/index.html"}';

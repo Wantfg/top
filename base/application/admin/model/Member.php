@@ -30,7 +30,10 @@ class Member extends Base {
      */
     public function login($uid){
         /* 检测是否在当前应用注册 */
-        $user = $this->field(true)->find($uid)->toArray();
+        $user = $this
+            ->field(true)
+            ->find($uid)
+            ->toArray();
         if(!$user || 1 != $user['status']) {
             $this->error = '用户不存在或已被禁用！'; //应用级别禁用
             return false;
@@ -71,8 +74,8 @@ class Member extends Base {
             'uid'             => $user['uid'],
             'username'        => $user['nickname'],
             'last_login_time' => $user['last_login_time'],
+            'code'            => $user['code'],
         );
-
         session('user_auth', $auth);
         session('user_auth_sign', data_auth_sign($auth));
 
