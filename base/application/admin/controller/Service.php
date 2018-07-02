@@ -60,8 +60,7 @@ class Service extends Admin
                 $remark = $item['remark'];
                 $create_time = $item['create_time'];
                 $is_pay = $item['is_pay'];
-                $action = '
-<a href="/admin/service/editCall/id/'.$item['id'].'.html">编辑</a>';
+                $action = '<a href="/admin/service/editCall/id/'.$item['id'].'.html">编辑</a>';
 
                 $tem = array('',$item['id'],$mobile,$name,$remark,$create_time,$is_pay,$action);
                 unset($tem[0]);
@@ -69,7 +68,6 @@ class Service extends Admin
             }
 
             $lists['data'] = $datas;
-
             return $lists;
         }
 //        var_dump(session(''),$uid_info,json_decode($json,true));
@@ -86,7 +84,10 @@ class Service extends Admin
         if(empty($id)){
             $this->error('参数不能为空！');
         }
-        var_dump($id);
+//        $info = db('vip')->alias('v')->where('v.id',$id)->join('__UCENTER_MEMBER__ um','v.uid = um.id')->find();
+        $info = db('vip')->where('id',$id)->find();
+        $this->assign('info',$info);
+        var_dump($id,$info);
         return $this->fetch();
     }
 }

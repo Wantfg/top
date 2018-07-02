@@ -4,12 +4,28 @@
 {block name="body"}
     <div class="row">
         <div class="col-xs-12">
+            <div class="">添加时间：{$info.create_time|date="Y-m-d H:i:s",###}</div>
+            <div>修改时间：{$info.update_time|date="Y-m-d H:i:s",###}</div>
+            <div>已付款</div>
             <!-- 表单 -->
             <form id="form" action="{$model_info['url']}" method="post" class="form-horizontal">
-                <div class="form-group">
-                    <label>标题<span class="check-tips">（文档标题）</span></label>
+
+                <div class="form-group" style="margin-left:0; ">
+                    <label>手机号<span class="check-tips">（用户手机号）</span></label>
                     <div class="controls layui-form">
-                        <input type="text" class="form-control" name="title" value="TwoThink2.0正式版">
+                        <input type="text" class="form-control" name="mobile" value="{$info.mobile}">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-left:0; ">
+                    <label>姓名<span class="check-tips">（用户姓名）</span></label>
+                    <div class="controls layui-form">
+                        <input type="text" class="form-control" name="name" value="{$info.name}">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-left:0; ">
+                    <label>其他信息<span class="check-tips"></span></label>
+                    <div class="controls layui-form">
+                        <input type="text" class="form-control" name="remark" value="{$info.remark}">
                     </div>
                 </div>
                 <!-- 基础文档模型 -->
