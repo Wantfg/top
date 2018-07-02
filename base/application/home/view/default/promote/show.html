@@ -25,6 +25,7 @@
             </ul>
         </div>
     </div>
+
     <div class="item_b">
         <div class="check">
             <input id="checkbox1" class="checkbox" type="checkbox" />
@@ -33,12 +34,14 @@
     </div>
     <div class="cre_ban">
         <div class="cre_left">
-            <div>客服热线:4000-000-000</div>
-            <div>投诉邮箱:admin@admin.com</div>
+            <form action="{:url('vipIn')}" method="post" id="proForm">
+                <input type="number" placeholder="请输入手机号" name="mobile" value="" />
+                <input type="hidden" name="pro_code" value="{:input('pro_code','')}">
+                <input type="hidden" name="code_key" value="{$code_key}" />
+            </form>
         </div>
         <div class="cre_right" id="sumbitCilk">
-            <div>立刻申请</div>
-            <div>(¥188/三个月)</div>
+            立刻申请
         </div>
     </div>
 
@@ -79,7 +82,7 @@
             return;
         } else {
             //后台请求中.....
-            mui.toast("请联系专员")
+            $('#proForm').submit();
 
         }
     })

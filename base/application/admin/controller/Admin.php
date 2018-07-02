@@ -68,6 +68,7 @@ class Admin extends Controller {
                 //检测访问权限
                 $rule  = strtolower($this->request->module().'/'.$this->request->controller().'/'.$this->request->action());
                 if ( !$this->checkRule($rule,array('in','1,2')) ){
+//                    var_dump($rule);
                     $this->error('未授权访问!');
                 }else{
                     // 检测分类及内容有关的各项动态权限

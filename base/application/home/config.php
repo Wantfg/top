@@ -69,4 +69,5 @@ return [
 				// 预先加载的标签库
 				'taglib_pre_load'     =>    'app\common\taglib\Think,app\common\taglib\Article',
 		],
+    'common_aes_key' =>' 9d0547ac505d5e3a0c816b8b12c59184',
 ];

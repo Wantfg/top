@@ -1,6 +1,5 @@
 body,
 html {
-	font-family: "黑体";
 	background: #f8f5f5 !important
 }
 
@@ -363,7 +362,9 @@ a {
 	background: #ffea01;
 	float: left;
 	color: #333333;
-	text-align: center
+	text-align: center;
+	line-height: 60px;
+	font-weight: bold;
 }
 
 .cre_ban .cre_right div:first-child {
