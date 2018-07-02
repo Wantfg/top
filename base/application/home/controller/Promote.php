@@ -64,5 +64,4 @@ class Promote extends Home{
         $promote->save();
         return $this->fetch();
     }
-
 }

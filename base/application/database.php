@@ -18,6 +18,14 @@ return [
     'username'       => 'MyTopWay',
     // 密码
     'password'       => 'BBiittyy-*7759',
+//    // 服务器地址
+//    'hostname'       => '127.0.0.1',
+//    // 数据库名
+//    'database'       => 'base',
+//    // 用户名
+//    'username'       => 'root',
+//    // 密码
+//    'password'       => '',
     // 端口
     'hostport'       => '3306',
     // 连接dsn
