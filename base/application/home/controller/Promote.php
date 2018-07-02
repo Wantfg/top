@@ -49,7 +49,7 @@ class Promote extends Home{
         return $this->fetch();
     }
 
-    public function proIn()
+    public function vipIn()
     {
         $data = input('');
         $pro_info = db('member')->where('code',$data['pro_code'])->find();
