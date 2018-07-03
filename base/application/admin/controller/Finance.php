@@ -8,17 +8,14 @@
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 
-use think\Db;
-use think\modelinfo\System;
-
 /**
  * Class Service
  * @package app\admin\controller
  */
-class Service extends Admin
+class Finance extends Admin
 {
 
-    public function call()
+    public function order()
     {
 
         $uid_info = db('member')->alias('m')->field('m.*,aga.group_id')->where('m.uid',session('user_auth.uid'))->join('__AUTH_GROUP_ACCESS__ aga','m.uid = aga.uid','LEFT')->find();
@@ -38,26 +35,20 @@ class Service extends Admin
         ];
         $form['pk'] = 'id';
 //        $form['button'] = [
-//            ['title' => '新增','type' => 'select','extra' => array(['title' => '文章','url' => 'article/add?cate_id=2&model_id=2&pid=0','class'=>'ajax-get iframe'],['title' => '下载','url' => 'article/add?cate_id=2&model_id=3&pid=0','class'=>'ajax-get iframe']),'class'=>'bg-aqua'],
+//            ['title' => '新增','type' => 'select','extra' => array(['title' => '文章','url' => 'article/add?cate_id=2&model_id=2&pid=0','class'=>'ajax-get iframe'],['title' => '下载','url' => 'article/add?cate_id=2&model_id=3&pid=0','class'=>'ajax-get iframe']),'class'=>'bg-aqua'],.
 //            ['title' => '启用','url' => 'setstatus?status=1&cate_id=2','icon' => '','class' => 'bg-teal ajax-post','ExtraHTML' => 'target-form="ids"'],
 //            ['title' => '禁用','url' => 'setstatus?status=0&cate_id=2','icon' => '','class' => 'bg-yellow ajax-post confirm','ExtraHTML' => 'target-form="ids"'],
 //            ['title' => '删除','url' => 'setstatus?status=-1&cate_id=2','icon' => '','class' => 'bg-red ajax-post confirm','ExtraHTML' => 'target-form="ids"'],
 //        ];
-        $form['url'] = '/admin/service/call.html';
+        $form['url'] = '/admin/Finance/order.html';
+
         if ($this->request->isPost()) {
             $lists['total'] = db('vip')->count();
             $lists['per_page'] = input('limit',10);
             $lists['current_page'] = input('page',1);
             $lists['last_page'] = 10;
             $lists['code'] = 1;
-            if($uid_info['group_id'] == 3){
-                $data = db('vip')->order('id desc')->page($lists['current_page'],$lists['per_page'])->select();
-            }elseif($uid_info['uid'] == 1){
-                $data = db('vip')->order('id desc')->page($lists['current_page'],$lists['per_page'])->select();
-            }else{
-                $data = db('vip')->where('uid',$uid_info['uid'])->page($lists['current_page'],$lists['per_page'])->order('id desc')->select();
-                $lists['total'] = db('vip')->where('uid',$uid_info['uid'])->count();
-            }
+            $data = db('vip')->order('id desc')->page($lists['current_page'],$lists['per_page'])->select();
             $datas = [];
             foreach($data as $k => $item){
                 $mobile = $item['mobile'];
@@ -66,6 +57,11 @@ class Service extends Admin
                 $create_time = $item['create_time'];
                 $is_pay = $item['is_pay'];
                 $action = '<a href="/admin/service/editCall/id/'.$item['id'].'.html">编辑</a>';
+                if($item['is_pay'] == 0){
+                    $action .= ' | <a href="/admin/finance/status/act/income/id/'.$item['id'].'.html">收款</a>';
+                }elseif($item['is_pay'] == 1){
+                    $action .= ' | <a href="/admin/finance/status/act/refund/id/'.$item['id'].'.html">退款</a>';
+                }
 
                 $tem = array('',$item['id'],$mobile,$name,$remark,$create_time,$is_pay,$action);
                 unset($tem[0]);
@@ -75,32 +71,29 @@ class Service extends Admin
             $lists['data'] = $datas;
             return $lists;
         }
-        $this->assign('meta_title', '支付->服务订单');
+        $this->assign('meta_title', '管理->服务订单');
+//
 //        $model_info['url'] = $this->request->url();
         $this->assign('model_info',$form);
-        return $this->fetch();
+        return $this->fetch('service/call');
     }
 
-    public function editCall()
+    public function status()
     {
         $id     =   input('id','');
-        if(empty($id)){
+        $act    =   input('act','');
+        if(empty($id) || empty($act)){
             $this->error('参数不能为空！');
         }
-//        $info = db('vip')->alias('v')->where('v.id',$id)->join('__UCENTER_MEMBER__ um','v.uid = um.id')->find();
-        if($this->request->isPost()){
-            $vip = model('home/promote');
-            $update['mobile'] = input('mobile');
-            $update['name'] = input('name');
-            $update['remark'] = input('remark');
-            $condition['id'] = $id;
-            $vip->save($update,$condition);
-//            $this->success(!empty($data['id'])?'更新成功':'新增成功', Cookie('__forward__'));
+        $vip = model('home/Promote');
+        if($act == 'income'){
+            $vip->save(['is_pay' => 1],['id' => $id]);
             $this->success('更新成功', Cookie('__forward__'));
         }
-        $info = db('vip')->where('id',$id)->find();
-        $info['url'] = url('editCall');
-        $this->assign('info',$info);
-        return $this->fetch();
+        if($act == 'refund'){
+            $vip->save(['is_pay' => 2],['id' => $id,'is_pay' => 1]);
+            $this->success('更新成功', Cookie('__forward__'));
+        }
+
     }
 }
