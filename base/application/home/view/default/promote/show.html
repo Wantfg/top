@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>乐贷帮</title>
+    <title>快贷帮</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,7 +13,7 @@
 
 <body>
 <div class="bannerBOX">
-    <img src="__PUBLIC__/home/images/lebangdai.png">
+    <img src="__PUBLIC__/home/images/lebangdai.jpg">
     <div class="bannerlunbo2">*本平台不接受普通全日制高校在读学生或未成年人申请服务！</div>
     <div class="bannerlunbo">
         <img src="__PUBLIC__/home/images/huo.png">
@@ -25,23 +25,24 @@
             </ul>
         </div>
     </div>
-
-    <div class="item_b">
-        <div class="check">
-            <input id="checkbox1" class="checkbox" type="checkbox" />
-            <span>已阅读并同意</span><a href="">《服务合同》</a>
+    <div class="mobile_box">
+        <div class="item_b">
+            <div class="check">
+                <input id="checkbox1" class="checkbox" type="checkbox" />
+                <span>已阅读并同意</span><a href="">《服务合同》</a>
+            </div>
         </div>
-    </div>
-    <div class="cre_ban">
-        <div class="cre_left">
-            <form action="{:url('vipIn')}" method="post" id="proForm">
-                <input type="number" placeholder="请输入手机号" name="mobile" value="" />
-                <input type="hidden" name="pro_code" value="{:input('pro_code','')}">
-                <input type="hidden" name="code_key" value="{$code_key}" />
-            </form>
-        </div>
-        <div class="cre_right" id="sumbitCilk">
-            立刻申请
+        <div class="cre_ban">
+            <div class="cre_left">
+                <form action="{:url('vipIn')}" method="post" id="proForm">
+                    <input type="number" placeholder="请输入手机号" name="mobile" value="" />
+                    <input type="hidden" name="pro_code" value="{:input('pro_code','')}">
+                    <input type="hidden" name="code_key" value="{$code_key}" />
+                </form>
+            </div>
+            <div class="cre_right" id="sumbitCilk">
+                立刻申请
+            </div>
         </div>
     </div>
 
