@@ -26,11 +26,11 @@ class Finance extends Admin
         $form['field'] = ["id","title","type","update_time","status","view"];
         $form['list_field'] = [
             ['name' => 'id','field' => ['id'],'title'=>'编号'],
-            ['name' => 'title','field' => ['title'],'title'=>'','href'=>'[EDIT]'],
-            ['name' => 'type','field' => ['type'],'title'=>'类型'],
-            ['name' => 'update_time','field' => ['update_time'],'title'=>'最后更新'],
-            ['name' => 'status','field' => ['status'],'title'=>'状态'],
-            ['name' => 'view','field' => ['view'],'title'=>'浏览'],
+            ['name' => 'title','field' => ['title'],'title'=>'手机号','href'=>'[EDIT]'],
+            ['name' => 'type','field' => ['type'],'title'=>'姓名'],
+            ['name' => 'update_time','field' => ['update_time'],'title'=>'其他备注'],
+            ['name' => 'status','field' => ['status'],'title'=>'添加时间'],
+            ['name' => 'view','field' => ['view'],'title'=>'状态'],
             ['name' => 'id','field' => ['id'],'title'=>'操作','href'=>'[EDIT]|编辑,[DELETE]|删除'],
         ];
         $form['pk'] = 'id';
@@ -54,8 +54,15 @@ class Finance extends Admin
                 $mobile = $item['mobile'];
                 $name = $item['name'];
                 $remark = $item['remark'];
-                $create_time = $item['create_time'];
-                $is_pay = $item['is_pay'];
+                $create_time = date("Y-m-d H:i:s",$item['create_time']);
+                if($uid_info['group_id'] == 3){
+                    $data = db('vip')->order('id desc')->page($lists['current_page'],$lists['per_page'])->select();
+                }elseif($uid_info['uid'] == 1){
+                    $data = db('vip')->order('id desc')->page($lists['current_page'],$lists['per_page'])->select();
+                }else{
+                    $data = db('vip')->where('uid',$uid_info['uid'])->page($lists['current_page'],$lists['per_page'])->order('id desc')->select();
+                    $lists['total'] = db('vip')->where('uid',$uid_info['uid'])->count();
+                }
                 $action = '<a href="/admin/service/editCall/id/'.$item['id'].'.html">编辑</a>';
                 if($item['is_pay'] == 0){
                     $action .= ' | <a href="/admin/finance/status/act/income/id/'.$item['id'].'.html">收款</a>';
