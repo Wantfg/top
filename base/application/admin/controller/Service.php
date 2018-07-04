@@ -29,11 +29,11 @@ class Service extends Admin
         $form['field'] = ["id","title","type","update_time","status","view"];
         $form['list_field'] = [
             ['name' => 'id','field' => ['id'],'title'=>'编号'],
-            ['name' => 'title','field' => ['title'],'title'=>'','href'=>'[EDIT]'],
-            ['name' => 'type','field' => ['type'],'title'=>'类型'],
-            ['name' => 'update_time','field' => ['update_time'],'title'=>'最后更新'],
-            ['name' => 'status','field' => ['status'],'title'=>'状态'],
-            ['name' => 'view','field' => ['view'],'title'=>'浏览'],
+            ['name' => 'title','field' => ['title'],'title'=>'手机号','href'=>'[EDIT]'],
+            ['name' => 'type','field' => ['type'],'title'=>'姓名'],
+            ['name' => 'update_time','field' => ['update_time'],'title'=>'其他备注'],
+            ['name' => 'status','field' => ['status'],'title'=>'添加时间'],
+            ['name' => 'view','field' => ['view'],'title'=>'状态'],
             ['name' => 'id','field' => ['id'],'title'=>'操作','href'=>'[EDIT]|编辑,[DELETE]|删除'],
         ];
         $form['pk'] = 'id';
@@ -63,8 +63,15 @@ class Service extends Admin
                 $mobile = $item['mobile'];
                 $name = $item['name'];
                 $remark = $item['remark'];
-                $create_time = $item['create_time'];
-                $is_pay = $item['is_pay'];
+                $create_time = date("Y-m-d H:i:s",$item['create_time']);
+                if($item['is_pay'] == 1){
+                    $is_pay = '已付款';
+                }elseif($item['is_pay'] == 2){
+                    $is_pay = '已退款';
+                }else{
+                    $is_pay = '未付款';
+                }
+
                 $action = '<a href="/admin/service/editCall/id/'.$item['id'].'.html">编辑</a>';
 
                 $tem = array('',$item['id'],$mobile,$name,$remark,$create_time,$is_pay,$action);
