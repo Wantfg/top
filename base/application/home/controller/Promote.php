@@ -64,7 +64,7 @@ class Promote extends Home{
         return $this->fetch();
     }
 
-    public function promote()
+    public function pro()
     {
         $this->assign('code_key',think_encrypt(time(),config('common_aes_key')));
         return $this->fetch();

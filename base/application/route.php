@@ -18,4 +18,5 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     'vip/[:pro_code]' => 'home/promote/show',
+    'pro/[:pro_code]' => 'home/promote/pro',
 ];

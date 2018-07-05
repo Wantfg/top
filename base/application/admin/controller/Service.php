@@ -135,7 +135,7 @@ class Service extends Admin
 //            ['title' => '禁用','url' => 'setstatus?status=0&cate_id=2','icon' => '','class' => 'bg-yellow ajax-post confirm','ExtraHTML' => 'target-form="ids"'],
 //            ['title' => '删除','url' => 'setstatus?status=-1&cate_id=2','icon' => '','class' => 'bg-red ajax-post confirm','ExtraHTML' => 'target-form="ids"'],
 //        ];
-        $form['url'] = '/admin/Finance/order.html';
+        $form['url'] = '/admin/Service/order.html';
 
         if ($this->request->isPost()) {
             $lists['total'] = db('vip')->count();
@@ -183,7 +183,7 @@ class Service extends Admin
 //
 //        $model_info['url'] = $this->request->url();
         $this->assign('model_info',$form);
-        return $this->fetch('service/call');
+        return $this->fetch('service/pro');
     }
 
 
