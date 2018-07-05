@@ -29,7 +29,6 @@ class Promote extends Home{
 
     public function show()
     {
-        $pro_code = input('pro_code','');
         //随机滚动数据设置
         $mobile_a_row = array(139,138,137,136,135,134,159,158,157,150,151,152,188,130,131,132,156,155,133,153,189);
         $name_str = '赵钱孙李周吴郑王冯陈卫蒋沈韩杨朱秦许何吕施张孔曹严华魏陶姜戚谢邹水章云苏潘范彭';
@@ -50,6 +49,29 @@ class Promote extends Home{
     }
 
     public function vipIn()
+    {
+        $data = input('');
+        $pro_info = db('member')->where('code',$data['pro_code'])->find();
+        if(empty($pro_info)){
+            return '专员编号错误，请联系专员';
+        }
+        $promote = model('Vip');
+        $promote->data([
+            'uid' => $pro_info['uid'],
+            'mobile' => $data['mobile'],
+        ]);
+        $promote->save();
+        return $this->fetch();
+    }
+
+    public function promote()
+    {
+        $this->assign('code_key',think_encrypt(time(),config('common_aes_key')));
+        return $this->fetch();
+    }
+
+
+    public function promoteIn()
     {
         $data = input('');
         $pro_info = db('member')->where('code',$data['pro_code'])->find();

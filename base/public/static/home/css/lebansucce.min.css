@@ -12,7 +12,6 @@ a {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	margin-bottom:100px;
 }
 
 .bannerBOX img {
@@ -268,7 +267,7 @@ ul li {
 	.bannerBOX .bannerlunbo {
 		width: 80%;
 		height: 40px;
-		background: rgba(74, 163, 254, 0.5);
+		background: rgba(214, 100, 64, 0.55);
 		border-radius: 50px;
 		position: absolute;
 		top:23.5%;
@@ -428,5 +427,5 @@ a {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding-bottom: 20px;
+	padding-bottom: 70px;
 }
