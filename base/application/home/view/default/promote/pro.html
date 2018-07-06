@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="has-topbar has-bottombar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>乐贷帮</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="__PUBLIC__/home/css/mui.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/home/css/lebansucce.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="bannerBOX">
+    <div class="mobile_box">
+        <div class="cre_ban">
+            <div class="cre_left">
+                <form action="{:url('promoteIn')}" method="post" id="proForm">
+                    <input type="number" placeholder="请输入手机号" name="mobile" value="" />
+                    <input type="hidden" name="pro_code" value="{:input('pro_code','')}">
+                    <input type="hidden" name="code_key" value="{$code_key}" />
+                </form>
+            </div>
+            <div class="cre_right" id="sumbitCilk">
+                佣金支付
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__PUBLIC__/home/js/mui.min.js"></script>
+<script src="__PUBLIC__/home/js/jquery.min.js"></script>
+<script>
+    //业务提交
+    document.getElementById("sumbitCilk").addEventListener('tap', function() {
+        //后台请求中.....
+        $('#proForm').submit();
+    })
+</script>
+</html>

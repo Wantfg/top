@@ -18,14 +18,9 @@ class Promote extends Home{
 
 
 	//留空默认页
-    public function index(){
+    public function index(){}
 
-    }
-
-    public function mobileSet()
-    {
-        
-    }
+    public function mobileSet(){}
 
     public function show()
     {
@@ -55,13 +50,18 @@ class Promote extends Home{
         if(empty($pro_info)){
             return '专员编号错误，请联系专员';
         }
-        $promote = model('Vip');
-        $promote->data([
-            'uid' => $pro_info['uid'],
-            'mobile' => $data['mobile'],
-        ]);
-        $promote->save();
-        return $this->fetch();
+        $vip = model('Vip');
+        $has_mobile = $vip->where(['mobile' => $data['mobile']])->find();
+        if($has_mobile){
+            $vip->save(['update_time' => time()],['id' => $has_mobile['id']]);
+        }else{
+            $vip->data([
+                'uid' => $pro_info['uid'],
+                'mobile' => $data['mobile'],
+            ]);
+            $vip->save();
+        }
+//        return $this->fetch();
     }
 
     public function pro()
@@ -79,11 +79,22 @@ class Promote extends Home{
             return '专员编号错误，请联系专员';
         }
         $promote = model('Promote');
-        $promote->data([
-            'uid' => $pro_info['uid'],
-            'mobile' => $data['mobile'],
-        ]);
-        $promote->save();
-        return $this->fetch();
+        $has_mobile = $promote->where(['mobile' => $data['mobile']])->find();
+        if($has_mobile){
+            $promote->save(['update_time' => time()],['id' => $has_mobile['id']]);
+        }else{
+            $vip_id = db('vip')->where(['mobile' => $data['mobile']])->find();
+            if(empty($vip_id)){
+                $this->error('请先支付服务费');
+            }
+            $promote->data([
+                'uid' => $pro_info['uid'],
+                'vip_id' => $vip_id['id'],
+                'mobile' => $data['mobile'],
+            ]);
+            $promote->save();
+        }
+
+//        return $this->fetch('vipin');
     }
 }
