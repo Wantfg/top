@@ -93,7 +93,7 @@ class Finance extends Admin
 
 //        $model_info['url'] = $this->request->url();
         $this->assign('model_info',$form);
-        return $this->fetch('service/call');
+        return $this->fetch('service/pro');
     }
 
     public function status()
@@ -175,7 +175,7 @@ class Finance extends Admin
 //
 //        $model_info['url'] = $this->request->url();
         $this->assign('model_info',$form);
-        return $this->fetch('service/call');
+        return $this->fetch('service/pro');
     }
 
     public function addPromote()
