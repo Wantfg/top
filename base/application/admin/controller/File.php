@@ -7,6 +7,8 @@
 // | Author: 艺品网络  82550565@qq.com <www.twothink.cn>
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
+use think\Log;
+
 /**
  * 文件控制器
  * 主要用于下载模型的文件上传和下载
@@ -54,11 +56,11 @@ class File extends Admin {
     public function uploadpicture(){
         //TODO: 用户登录检测
         /* 调用文件上传组件上传文件 */
-        $file = request()->file('download');
+        $file = request()->file('addonwebuploader_file');
         if (empty($file)) {
             $this->error('请选择上传文件');
         }
-        $Picture = model('picture');
+        $Picture = model('home/Picture');
         $info = $Picture->upload($file,config('picture_upload'));
         //TODO:上传到远程服务器
         /* 记录图片信息 */
